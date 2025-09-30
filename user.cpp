@@ -11,3 +11,14 @@ std::string User::getName() const { return name_; }
 int User::getYear() const { return year_; }
 int User::getZip() const { return zip_; }
 std::set<int>& User::getFriends() { return friends_; }
+void User::addFriend(int id) {
+    if (friends_.find(id) == friends_.end()) {
+        friends_.insert(id);
+    }
+}
+
+void User::deleteFriend(int id) {
+    if (friends_.find(id) != friends_.end()) {
+        friends_.erase(id);
+    }
+}

@@ -20,6 +20,8 @@ public:
     int getYear() const;
     int getZip() const;
     std::set<int>& getFriends();
+    void addFriend(int id);
+    void deleteFriend(int id);
 };
 
 #endif
