@@ -30,3 +30,22 @@ int Network::getId(std::string name) {
         if (trim(users_[i]->getName()) == name) return static_cast<int>(i);
     return -1;
 }
+
+int Network::addConnection(std::string s1, std::string s2) {
+    int id1 = getId(s1), id2 = getId(s2);
+    if (id1 == -1 || id2 == -1 || id1 == id2) return -1;
+    users_[id1]->addFriend(id2);
+    users_[id2]->addFriend(id1);
+    return 0;
+}
+
+int Network::deleteConnection(std::string s1, std::string s2) {
+    int id1 = getId(s1), id2 = getId(s2);
+    if (id1 == -1 || id2 == -1) return -1;
+    users_[id1]->deleteFriend(id2);
+    users_[id2]->deleteFriend(id1);
+    return 0;
+}
+
+int Network::numUsers() { return static_cast<int>(users_.size()); }
+
