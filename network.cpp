@@ -49,3 +49,7 @@ int Network::deleteConnection(std::string s1, std::string s2) {
 
 int Network::numUsers() { return static_cast<int>(users_.size()); }
 
+void Network::readUsers(const char* fname) {  }
+void Network::writeUsers(const char* fname) {  }
+
+
