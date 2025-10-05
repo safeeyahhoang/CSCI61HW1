@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <cctype>
 
-Network::Network() {}
+Network::Network() { }
 
 Network::~Network() {
     for (auto u : users_) {
